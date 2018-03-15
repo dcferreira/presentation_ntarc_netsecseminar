@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>NTARC Database &mdash; NetSec seminar presentation for ntarc  documentation</title>
+
+    
+
+    
+<link rel="stylesheet" href="_static/css/reveal.css">
+<link rel="stylesheet" href="_static/css/theme/black.css" id="theme">
+<link rel="stylesheet" href="_static/lib/css/zenburn.css">
+<link rel="stylesheet" href="_static/revealjs.css" type="text/css" />
+<link rel="stylesheet" href="_static/custom.css" type="text/css" />
+
+    <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+    <script>
+        if(window.location.search.match(/print-pdf/gi)) {
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            link.href = '_static/css/print/pdf.css';
+            document.getElementsByTagName('head')[0].appendChild(link);
+        }
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="_static/lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        
+  <div class="section" id="ntarc-database">
+<h1>NTARC Database<a class="headerlink" href="#ntarc-database" title="Permalink to this headline">¶</a></h1>
+<section id="title">
+<h2>NTARC Database</h2>
+<div class="first"><style>sstrong {font-size: 120%; font-weight: bold;}</style>
+
+<p><sstrong>N</sstrong>etwork <sstrong>T</sstrong>raffic <sstrong>A</sstrong>nalysis <sstrong>R</sstrong>esearch <sstrong>C</sstrong>uration</p> <p>Database</p></div><small class="last">
+<p class="first">Daniel Ferreira, TU Wien</p>
+<p class="last"><a class="reference external" href="mailto:daniel&#46;ferreira&#37;&#52;&#48;tuwien&#46;ac&#46;at">daniel<span>&#46;</span>ferreira<span>&#64;</span>tuwien<span>&#46;</span>ac<span>&#46;</span>at</a></p>
+</small>
+</section>
+<section>
+<section class="first">
+<h2>Why?</h2>
+<ul class="first simple">
+<li>Reading papers is time-exhaustive</li>
+<li>Each day more research, impossible to read everything</li>
+<li>No standardized methodologies (in network traffic research)</li>
+</ul>
+<aside class="last notes">
+cybersecurity gaining hype</aside>
+</section>
+<section>
+<h2>The NT Analysis Pipeline</h2>
+<div class="first"><a class="first last reference internal image-reference" href="_static/chain-ext_inv.png"><img style="background:none; border:none; box-shadow:none; max-height: 80%; max-width: 60%;" alt="Taxonomy" src="_static/chain-ext.png"></a></div><aside class="last notes">
+<p class="first">every paper like this</p>
+<p>focus on 1 piece, without caring about others</p>
+<p class="last">gives us structure</p>
+</aside>
+</section>
+<section class="last">
+<h2>Goals</h2>
+<ul class="first last simple">
+<li>Easy to find unresearched topics</li>
+<li>Enables another perspective of the research</li>
+<li>Enables reproducibility</li>
+<li>Encourages standardization</li>
+</ul>
+</section>
+</section>
+<section>
+<h2>NTARC Database</h2>
+<section class="first">
+<h4>What Is It?</h4>
+<p class="fragment first">Collection of JSON files, include structured and unstructured data</p>
+<aside class="fragment notes">
+tried to find balance</aside>
+<p class="fragment">We collect many parameters on what was previously researched</p>
+<small class="fragment last">
+<p class="first"><em>e.g.</em>:</p>
+<p>Who has used SVM for anomaly detection, and in which dataset?</p>
+<p class="fragment last">Is the size of the packet often used to detect DDoS attacks?</p>
+</small>
+</section>
+<section>
+<h4>What We Have</h4>
+<ul class="first simple">
+<li>71 papers with NTARC.v1</li>
+<li>&gt; 50 papers with NTARC.v2</li>
+<li>v1 and v2 have 33 papers in common</li>
+</ul>
+<p class="fragment last">v1 is now deprecated, but not all content exists (yet) in v2</p>
+</section>
+<section>
+<div class="first"><br>
+<a class="first last reference internal image-reference" href="_static/taxon_inv.png"><img style="background:none; border:none; box-shadow:none; max-height: 90%; max-width: 90%;" alt="Taxonomy" src="_static/taxon_inv.png"></a></div><aside class="last notes">
+<p class="first">blocks</p>
+<p class="last">optional</p>
+</aside>
+</section>
+<section>
+<h4>Documentation</h4>
+<p class="first"><a class="reference external" href="https://nta-meta-analysis.readthedocs.io">https://nta-meta-analysis.readthedocs.io</a></p>
+<aside class="last notes">
+field descriptions (see preproc-&gt;feat_selec-&gt;type</aside>
+</section>
+<section class="last">
+<h4>Viewing the Database</h4>
+<p class="first"><a class="reference external" href="https://github.com/CN-TU/nta-meta-analysis">https://github.com/CN-TU/nta-meta-analysis</a></p>
+<aside class="last notes">
+show tree</aside>
+</section>
+</section>
+<section>
+<h2>How Can I Use It?</h2>
+<section class="first">
+<p class="fragment first last">Which papers do <span class="redtext">anomaly</span> detection?</p>
+</section>
+<section>
+<div class="first"><br></div><p>with <code class="docutils literal"><span class="pre">grep</span></code> (v1)</p>
+<iframe src="_static/grep_anomaly.html" width="840px" height="640px"></iframe><aside class="last notes">
+<p class="first">v1 little tools, use text file tools</p>
+<p class="last">data not too big</p>
+</aside>
+</section>
+<section>
+<div class="first"><br></div><p>with <code class="docutils literal"><span class="pre">grep</span></code> (v2)</p>
+<div class="last"><iframe src="_static/grep_anomaly_v2.html" width="840px" height="640px"></iframe></div></section>
+<section>
+<p class="first">with <code class="docutils literal"><span class="pre">python</span></code> (v2)</p>
+<p class="last"><a class="reference external" href="https://github.com/CN-TU/nta-meta-analysis-library">https://github.com/CN-TU/nta-meta-analysis-library</a></p>
+</section>
+<section>
+<p class="first">with <code class="docutils literal"><span class="pre">python</span></code> (v2)</p>
+<iframe src="_static/python_anomaly.html" width="840px" height="90px"></iframe><p>or</p>
+<div class="last"><iframe src="_static/python_anomaly_papers.html" width="840px" height="240px"></iframe></div></section>
+<section class="last">
+<div class="first"><br></div><p>with <code class="docutils literal"><span class="pre">python</span></code> (v2)</p>
+<iframe src="_static/python_methods.html" width="840px" height="640px"></iframe><aside class="last notes">
+<p class="first">coloring is manual</p>
+<p class="last">data not too big, easy to go through manually</p>
+</aside>
+</section>
+</section>
+<section>
+<h2>What Can It Be Used For?</h2>
+<section class="first">
+<ul class="fragment first simple">
+<li>Which methods have already been applied?</li>
+</ul>
+<ul class="fragment simple">
+<li>What datasets are being used?</li>
+</ul>
+<ul class="fragment simple">
+<li>What are the main gaps in the field?</li>
+</ul>
+<ul class="fragment last simple">
+<li>Whatever else you can think of…</li>
+</ul>
+</section>
+<section class="last">
+<div class="first"><br></div><p>What Features Are Most Used?</p>
+<a class="first last reference internal image-reference" href="_static/featuresplot.png"><img style="background:none; border:none; box-shadow:none; max-height: 90%; max-width: 90%;" alt="Feature usage" src="_static/featuresplot.png"></a><small>
+<p class="first"><em>Made with NTARC.v1</em></p>
+<p class="last"><em>Reference</em>: Ferreira, D. C., Vázquez, F. I., Vormayr, G., Bachl, M., &amp; Zseby, T. (2017, August). A meta-analysis approach for feature selection in network traffic research. In <em>Proceedings of the Reproducibility Workshop</em> (pp. 17-20). ACM.</p>
+</small>
+<aside class="last notes">
+<p class="first">few features used often</p>
+<p>new features never reused</p>
+<p class="last">common features are not justified</p>
+</aside>
+</section>
+</section>
+<section>
+<h2>Why Should I Contribute?</h2>
+<p class="first">By contributing, you will…</p>
+<ul class="simple">
+<li>increase long-time quality of Network Analysis research</li>
+<li>quickly learn what is important to read in papers</li>
+<li>become more critical of research</li>
+<li>write easier to comprehend papers</li>
+</ul>
+<aside class="last notes">
+we need manpower</aside>
+</section>
+<section>
+<h2>How Can I Contribute?</h2>
+<ol class="first last arabic simple">
+<li>Find a paper that deals with traffic analysis at network level (ask us if you need suggestions)</li>
+<li>Read the paper</li>
+<li>Curate the paper to an NTARC file</li>
+<li>Open a pull-request on <a class="reference external" href="https://github.com/CN-TU/nta-meta-analysis">Github</a> to add to the database</li>
+</ol>
+</section>
+<section>
+<h2>Curating a Paper</h2>
+<section class="first">
+<h4>Editor demo</h4>
+<p class="first"><a class="reference external" href="https://github.com/CN-TU/nta-meta-analysis-editor">https://github.com/CN-TU/nta-meta-analysis-editor</a></p>
+<aside class="last notes">
+<p class="first">show mandatory fields</p>
+<p>open paper</p>
+<p class="last">very quick to “read” paper</p>
+</aside>
+</section>
+<section class="last">
+<div class="first"><br>
+<a class="first last reference internal image-reference" href="_static/github_pr.png"><img style="background:none; border:none; box-shadow:none; max-height: 90%; max-width: 90%;" alt="Paper blocks" src="_static/github_pr.png"></a></div><aside class="last notes">
+<p class="first">open to PR</p>
+<p class="last">automatic verifier for syntax</p>
+</aside>
+</section>
+</section>
+<section>
+<h2>Summary</h2>
+<ul class="first last simple">
+<li>NTARC format</li>
+<li>Search for papers in the database</li>
+<li>Adding papers is good for everyone!</li>
+</ul>
+</section>
+</div>
+
+
+      </div>
+    </div>
+    
+<script src="_static/js/jquery.min.js"></script>
+<script src="_static/lib/js/head.min.js"></script>
+<script src="_static/js/reveal.js"></script>
+    <script>
+
+      // change DOM for reveal.js
+      $("div.section h1").remove();
+      var content = $("div.section").html();
+      $("div.section").remove();
+      $("div.slides").html(content);
+
+      Reveal.initialize({
+        width: 960,
+        height: 700,
+
+        margin: 0.1,
+
+        minScale: 0.2,
+        maxScale: 1.0,
+
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+
+        keyboard : true,
+        overview: true,
+        touch: true,
+        loop: true,
+        rtl: false,
+        fragments: true,
+
+        autoSlide: 0,
+        mouseWheel: false,
+        rollingLinks: false,
+        previewLinks: false,
+
+        transitionSpeed: "default",
+        backgroundTransition: "default",
+
+        slideNumber: true,
+        embedded: false,
+        autoSlideStoppable: true,
+        hideAddressBar: true,
+
+        parallaxBackgroundImage: "",
+        parallaxBackgroundSize: "",
+
+        focusBodyOnPageVisiblityChange: true,
+
+        viewDistance: 3,
+
+        transition: Reveal.getQueryHash().transition || "default",
+
+        
+
+        dependencies: [
+           { src: '_static/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+           { src: '_static/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+           { src: '_static/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+           { src: '_static/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+           { src: '_static/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+    </script>
+    
+  </body>
+</html>
