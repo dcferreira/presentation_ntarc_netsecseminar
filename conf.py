@@ -93,7 +93,7 @@ html_use_index = False
 # html_theme_options = {}
 html_theme_options = {
         'lang': 'en',
-        'controls': False,
+        'controls': True,
         'loop': True,
         'slide_number': True
         }
